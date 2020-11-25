@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "158615391718",
+    "firebase_url": "https://juorneyinfo.firebaseio.com",
+    "project_id": "juorneyinfo",
+    "storage_bucket": "juorneyinfo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158615391718:android:52cb221ee18f3c07641a27",
+        "android_client_info": {
+          "package_name": "com.company.journeyInfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158615391718-7bhbleu75m3c7rc1g6i416c0biosleb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu1SK92h3IZS46JsRN30US6LS31rsQjcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158615391718-7bhbleu75m3c7rc1g6i416c0biosleb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

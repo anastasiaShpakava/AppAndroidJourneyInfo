@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "132894648923",
+    "firebase_url": "https://appandroidjourneyinfo.firebaseio.com",
+    "project_id": "appandroidjourneyinfo",
+    "storage_bucket": "appandroidjourneyinfo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132894648923:android:997d72399d1c8f9e74ed7e",
+        "android_client_info": {
+          "package_name": "com.company.journeyInfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132894648923-7jjavu9d6qj6e9gaq770ovljp4oqj53u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.journeyInfo",
+            "certificate_hash": "49eedf69a2dd0574aad015212cb08ee4e0ec96aa"
+          }
+        },
+        {
+          "client_id": "132894648923-i63lqrtj3t6qk0par9esn7arn9gs806h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDy16Jan7sH26fM4gOu2L53Yd9qkUn9Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132894648923-i63lqrtj3t6qk0par9esn7arn9gs806h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
