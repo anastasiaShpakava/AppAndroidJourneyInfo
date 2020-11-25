@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AppAndroidJourneyInfo</string>
+    <string name="app_name">AndroidAppJourney</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="login">SIGN IN</string>
+    <string name="lastEddedPost">Last added posts</string>
+    <string name="already_have_account">Already Have an Account?  Sign in</string>
+    <string name="dont_have_account">Don\'t Have an Account?  Sign Up</string>
 </resources>
