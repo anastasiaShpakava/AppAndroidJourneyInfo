@@ -80,7 +80,7 @@ public class SignInFragment extends Fragment {
         public void onClick(View v) {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
-        //    signIn(email, password);
+           // signIn(email, password);
 
             UserPageFragment userPageFragment = new UserPageFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, userPageFragment)
