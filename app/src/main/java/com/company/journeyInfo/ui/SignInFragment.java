@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class SignInFragment extends Fragment {
-    private FirebaseAuth mAuth;
+   // private FirebaseAuth mAuth;
     private EditText editTextEmail, editTextPassword;
     private Button buttonLogin;
     private TextView textViewRegister;
@@ -43,7 +43,7 @@ public class SignInFragment extends Fragment {
         textViewRegister.setOnClickListener(toSignUpView);
         buttonLogin.setOnClickListener(toSignIn);
 
-        mAuth = FirebaseAuth.getInstance();
+      //  mAuth = FirebaseAuth.getInstance();
         return view;
     }
 //    @Override
@@ -52,34 +52,35 @@ public class SignInFragment extends Fragment {
 //        // Check if user is signed in (non-null) and update UI accordingly.
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
 //    }
-    public void signIn (String email, String password){
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                         //   updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("TAG", "signInWithEmail:failure", task.getException());
-                            Toast.makeText(getActivity(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        //    updateUI(null);
-                        }
+//    public void signIn (String email, String password){
+//        mAuth.signInWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            // Sign in success, update UI with the signed-in user's information
+//                            Log.d("TAG", "signInWithEmail:success");
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                         //   updateUI(user);
+//                        } else {
+//                            // If sign in fails, display a message to the user.
+//                            Log.w("TAG", "signInWithEmail:failure", task.getException());
+//                            Toast.makeText(getActivity(), "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                        //    updateUI(null);
+//                        }
+//
+//                        // ...
+//                    }
+//                });
+//    }
 
-                        // ...
-                    }
-                });
-    }
     View.OnClickListener toSignIn = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
-            signIn(email,password);
+        //    signIn(email, password);
 
             UserPageFragment userPageFragment = new UserPageFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, userPageFragment)

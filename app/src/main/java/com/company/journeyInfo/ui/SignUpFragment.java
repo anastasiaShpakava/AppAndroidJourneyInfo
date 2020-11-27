@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class SignUpFragment extends Fragment {
-    private FirebaseAuth mAuth;
+  //  private FirebaseAuth mAuth;
     private EditText editTextUsername, editTextEmail, editTextPassword, editTextCnfPassword;
     private Button buttonRegister;
     private TextView textViewLogin;
@@ -43,7 +43,7 @@ public class SignUpFragment extends Fragment {
         buttonRegister = view.findViewById(R.id.buttonRegister);
         textViewLogin = view.findViewById(R.id.textViewLogin);
 
-        mAuth = FirebaseAuth.getInstance();
+       // mAuth = FirebaseAuth.getInstance();
 
         textViewLogin.setOnClickListener(onViewSignIn);
         buttonRegister.setOnClickListener(toSignUpNewUser);
@@ -56,29 +56,29 @@ public class SignUpFragment extends Fragment {
 //        // Check if user is signed in (non-null) and update UI accordingly.
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
 //    }
-
-    public void signUpNewUser(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            //  updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getActivity(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            //  updateUI(null);
-                        }
-
-                        // ...
-                    }
-                });
-    }
+//
+//    public void signUpNewUser(String email, String password) {
+//        mAuth.createUserWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            // Sign in success, update UI with the signed-in user's information
+//                            Log.d("TAG", "createUserWithEmail:success");
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            //  updateUI(user);
+//                        } else {
+//                            // If sign in fails, display a message to the user.
+//                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
+//                            Toast.makeText(getActivity(), "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                            //  updateUI(null);
+//                        }
+//
+//                        // ...
+//                    }
+//                });
+//    }
 
         View.OnClickListener onViewSignIn = new View.OnClickListener() {
         @Override
@@ -96,7 +96,7 @@ public class SignUpFragment extends Fragment {
             String password = editTextPassword.getText().toString().trim();
             String passwordConf = editTextCnfPassword.getText().toString().trim();
 
-            signUpNewUser(email,password);
+         //   signUpNewUser(email,password);
 
             UserPageFragment userPageFragment = new UserPageFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, userPageFragment)
