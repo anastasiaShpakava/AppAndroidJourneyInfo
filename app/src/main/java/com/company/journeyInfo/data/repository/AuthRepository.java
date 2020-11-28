@@ -87,4 +87,5 @@ public class AuthRepository {
     public MutableLiveData<Boolean> getLoggedOutLiveData() {
         return loggedOutLiveData;
     }
+
 }

@@ -1,7 +1,6 @@
 package com.company.journeyInfo.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.company.journeyInfo.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.company.journeyInfo.viewModel.LoginRegisterViewModel;
 import com.google.firebase.auth.FirebaseUser;
 
 
@@ -27,9 +25,24 @@ public class SignUpFragment extends Fragment {
     private EditText editTextUsername, editTextEmail, editTextPassword, editTextCnfPassword;
     private Button buttonRegister;
     private TextView textViewLogin;
+    private LoginRegisterViewModel loginRegisterViewModel;
 
 
     public SignUpFragment() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        loginRegisterViewModel =  ViewModelProviders.of(this).get(LoginRegisterViewModel.class);
+        loginRegisterViewModel.getUserLiveData().observe(this, new Observer<FirebaseUser>() {
+            @Override
+            public void onChanged(FirebaseUser firebaseUser) {
+                if (firebaseUser != null) {
+                   Toast.makeText(getActivity(),"successfully logged",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     @Nullable
@@ -87,7 +100,7 @@ public class SignUpFragment extends Fragment {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, signInFragment)
                     .addToBackStack(null).commit();
         }
-    };
+        };
     View.OnClickListener toSignUpNewUser = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -95,8 +108,12 @@ public class SignUpFragment extends Fragment {
             String email = editTextEmail.getText().toString().trim();
             String password = editTextPassword.getText().toString().trim();
             String passwordConf = editTextCnfPassword.getText().toString().trim();
-
-         //   signUpNewUser(email,password);
+            if (email.length() > 0 && password.length() > 0) {
+                loginRegisterViewModel.register(email, password);
+            } else {
+                Toast.makeText(getActivity(), "Email Address and Password Must Be Entered", Toast.LENGTH_SHORT).show();
+            }
+            //   signUpNewUser(email,password);
 
             UserPageFragment userPageFragment = new UserPageFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, userPageFragment)
