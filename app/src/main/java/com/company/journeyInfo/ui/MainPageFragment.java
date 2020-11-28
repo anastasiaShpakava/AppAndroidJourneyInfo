@@ -37,6 +37,7 @@ public class MainPageFragment extends Fragment {
         buttonRegister.setOnClickListener(onSignUpPage);
         return view;
     }
+
     View.OnClickListener onSignInPage = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

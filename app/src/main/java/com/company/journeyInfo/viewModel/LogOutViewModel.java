@@ -9,12 +9,12 @@ import androidx.lifecycle.MutableLiveData;
 import com.company.journeyInfo.data.repository.AuthRepository;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignInViewModel extends AndroidViewModel {
+public class LogOutViewModel extends AndroidViewModel {
     private AuthRepository authAppRepository;
     private MutableLiveData<FirebaseUser> userLiveData;
     private MutableLiveData<Boolean> loggedOutLiveData;
 
-    public SignInViewModel(@NonNull Application application) {
+    public LogOutViewModel(@NonNull Application application) {
         super(application);
 
         authAppRepository = new AuthRepository(application);
